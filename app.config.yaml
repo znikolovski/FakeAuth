@@ -1,0 +1,58 @@
+application:
+  actions: actions
+  web: web-src
+  runtimeManifest:
+    packages:
+      FakeAuth:
+        license: Apache-2.0
+        actions:
+          generic:
+            function: actions/generic/index.js
+            web: 'yes'
+            runtime: nodejs:18
+            inputs:
+              LOG_LEVEL: debug
+              DATABASE_URL: $DATABASE_URL
+            annotations:
+              require-adobe-auth: false
+              final: true
+          init:
+            function: actions/init/index.js
+            web: 'yes'
+            runtime: nodejs:18
+            inputs:
+              LOG_LEVEL: debug
+              DATABASE_URL: $DATABASE_URL
+            annotations:
+              require-adobe-auth: false
+              final: true
+          verify:
+            function: actions/verify/index.js
+            web: 'yes'
+            runtime: nodejs:18
+            inputs:
+              LOG_LEVEL: debug
+              DATABASE_URL: $DATABASE_URL
+            annotations:
+              require-adobe-auth: false
+              final: true
+          create:
+            function: actions/create/index.js
+            web: 'yes'
+            runtime: nodejs:18
+            inputs:
+              LOG_LEVEL: debug
+              DATABASE_URL: $DATABASE_URL
+            annotations:
+              require-adobe-auth: false
+              final: true
+          publish-events:
+            function: actions/publish-events/index.js
+            web: 'yes'
+            runtime: nodejs:18
+            inputs:
+              LOG_LEVEL: debug
+              apiKey: $SERVICE_API_KEY
+            annotations:
+              require-adobe-auth: true
+              final: true
