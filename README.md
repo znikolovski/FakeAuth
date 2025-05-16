@@ -1,4 +1,4 @@
-# authfake
+# FakeAuth
 
 Welcome to FakeAuth - the realest (fake) auth service to use in your demos! FakeAuth implements a proper JWT based authentication flow so it mimics a real authentication process. It is powered by [Adobe AppBuilder](https://developer.adobe.com/app-builder/) and [Neon Tech](https://neon.tech/).
 
